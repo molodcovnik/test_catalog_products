@@ -1,0 +1,40 @@
+{% extends 'flatpages/default.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="products">
+        <button id="addProductBtn" class="add-product-btn">Добавить продукт</button>
+
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Добавить продукт</h2>
+                <form id="productForm">
+                    <label for="productName">Название:</label>
+                    <input type="text" id="productName" name="name" required>
+                    <br>
+                    <label for="productDescription">Описание:</label>
+                    <input type="text" id="productDescription" name="description" required>
+                    <br>
+                    <label for="productPrice">Цена:</label>
+                    <input type="text" id="productPrice" name="price" required>
+                    <br>
+                    <button type="submit" class="submit-btn">Добавить продукт</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="products-table">
+                <tr class="products-table__header">
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Цена</th>
+                </tr>
+                
+            </table>
+        </div>
+
+    </section>
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock content %}
